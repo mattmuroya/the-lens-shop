@@ -2,7 +2,7 @@ export default function NavBar() {
   return (
     <header>
       <nav>
-        <div id="logo">The Lens Shop</div>
+        <span id="logo">THE LENS SHOP</span>
         <ul id="menu">
           <li>Home</li>
           <li>Shop</li>
