@@ -6,7 +6,6 @@ function App() {
   return (
     <div className="wrapper">
       <NavBar />
-      <Home />
       <Outlet />
     </div>
   );
