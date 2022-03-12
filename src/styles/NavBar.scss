@@ -4,8 +4,8 @@
 
 nav {
   padding: 0 1rem;
-  height: 40px;
-  border-bottom: 1px solid black;
+  height: 60px;
+  // border-bottom: 1px solid black;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -15,10 +15,23 @@ nav {
     display: flex;
     gap: 1rem;
     list-style: none;
+
+    a {
+      text-decoration: none;
+      padding: 8px;
+      border-radius: 4px;
+      transition: .5s;
+    }
+  }
+
+  .active {
+    background-color: colors.$background-gray;
   }
 }
 
-#logo {
+#logo a {
+  text-decoration: none;
   font-family: 'Oswald';
   color: colors.$accent;
+  font-size: 1rem;
 }
