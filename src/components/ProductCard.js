@@ -2,13 +2,13 @@ export default function ProductCard({ productDetails: { id, name, price } }) { /
 
   return (
     <article className="product-card">
-      <a href={`/shop/product-id${id}`}>
+      <a href={`/shop/product/${id}`}>
         <div className="img-container">
           <img src={`/img/${id}.jpg`} alt={name} />
         </div>
       </a>
       <div className="description">
-        <a href="/ice"><h3>{name}</h3></a>
+        <a href={`/shop/product/${id}`}><h3>{name}</h3></a>
         <p>${price} USD</p>
         <form>
           <label htmlFor="quantity">Quantity</label>

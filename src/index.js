@@ -9,6 +9,7 @@ import {
 import App from './App';
 import Home from './components/Home';
 import Shop from './components/Shop';
+import ProductPage from './components/ProductPage';
 import Cart from './components/Cart';
 
 ReactDOM.render(
@@ -18,6 +19,7 @@ ReactDOM.render(
         <Route element={<App />}>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/shop/product/:productId" element={<ProductPage />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="*" element={
             <main className="error">
