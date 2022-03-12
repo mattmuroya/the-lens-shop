@@ -20,12 +20,11 @@ nav {
       text-decoration: none;
       padding: 8px;
       border-radius: 4px;
-      transition: .5s;
     }
   }
 
   .active {
-    background-color: colors.$background-gray;
+    text-decoration: underline;
   }
 }
 

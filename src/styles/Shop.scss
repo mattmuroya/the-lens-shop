@@ -32,5 +32,44 @@
 
 .product-card {
   background-color: colors.$white;
-  aspect-ratio: 1;
+
+  img {
+    width: 100%;
+  }
+
+  .description {
+    padding: 20px;
+
+    h3 {
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      input {
+        height: 20px;
+        width: 40px;
+      }
+
+      button {
+        border-style: none;
+        width: 100px;
+        height: 35px;
+        transition: .2s;
+        cursor: pointer;
+      
+        &:hover {
+          background-color: colors.$accent;
+          color: white;
+        }
+
+        &:active {
+          background-color: colors.$accent-dark;
+        }
+      }
+    }
+  }
 }
