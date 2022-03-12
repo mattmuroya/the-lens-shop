@@ -5,7 +5,7 @@ export default function NavBar() {
     <main className="home-main">
       <FadeIn className="hero-container" delay={300} transitionDuration={1000}>
         <h2 className="hero-text">Shop Our Lens Selection.</h2>
-        <button className="shop-btn">Shop Now</button>
+        <button className="shop-btn" onClick={() => window.location='/shop'} type="button">Shop Now</button>
       </FadeIn>
     </main>
   );

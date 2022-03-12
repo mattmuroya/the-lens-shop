@@ -1,10 +1,14 @@
-export default function ProductCard({ productDetails: { id, name, aperture, 'focal length':focalLength, price } }) { // nested prop destructuring
+export default function ProductCard({ productDetails: { id, name, price } }) { // nested prop destructuring
 
   return (
     <article className="product-card">
-      <img src={`/img/${id}.jpg`} alt={name} />
+      <a href={`/shop/product-id${id}`}>
+        <div className="img-container">
+          <img src={`/img/${id}.jpg`} alt={name} />
+        </div>
+      </a>
       <div className="description">
-        <h3>{name}</h3>
+        <a href="/ice"><h3>{name}</h3></a>
         <p>${price} USD</p>
         <form>
           <label htmlFor="quantity">Quantity</label>

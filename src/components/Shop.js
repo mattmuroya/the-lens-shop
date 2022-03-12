@@ -24,7 +24,7 @@ export default function Shop() {
 
   return (
     <main className="shop-main">
-        <FadeIn className="shop-container">
+        <FadeIn className="shop-container" delay={100} transitionDuration={400}>
           {products.map(product => {
             return <ProductCard key={product.id} productDetails={product}/>
           })}
