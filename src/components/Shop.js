@@ -25,7 +25,9 @@ export default function Shop() {
   return (
     <main className="shop-main">
         <FadeIn className="shop-container">
-          {products.map(product => <div key={product.id} className="product-card">{product.name}</div>)}
+          {products.map(product => {
+            return <ProductCard key={product.id} productDetails={product}/>
+          })}
         </FadeIn>
     </main>
   );
