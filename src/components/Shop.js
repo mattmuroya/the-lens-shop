@@ -1,26 +1,10 @@
-import { useEffect, useState } from 'react';
+import useProducts from '../utils/useProducts';
 import FadeIn from 'react-fade-in/lib/FadeIn';
 import ProductCard from './ProductCard';
 
-
 export default function Shop() {
 
-  const [products, setProducts] = useState([]);
-
-  async function getProducts() {
-    try {
-      const response = await fetch('/data/lenses.json');
-      const data = await response.json();
-      setProducts(data);
-    } catch (err) {
-      alert(`${err}. Please contact the administrator of this page.`);
-    }
-  }
-
-  useEffect(() => { // calls getProducts() on mount
-    getProducts();
-  }, []);
-
+  const [products] = useProducts('/data/lenses.json');
 
   return (
     <main className="shop-main">
