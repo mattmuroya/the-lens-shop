@@ -1,0 +1,61 @@
+@use './colors';
+
+.cart-main {
+  display: flex;
+  justify-content: center;
+}
+
+.cart-container {
+  margin: 40px;
+  display: flex;
+  background-color: white;
+  width: 100%;
+  max-width: 600px;
+}
+
+.cart-items {
+  width: 100%;
+  margin: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px
+}
+
+.cart-product {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 10px;
+
+  .cart-product-name {
+    font-weight: 700;
+  }
+
+  &:last-of-type {
+    margin-bottom: 40px;
+  }
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+input {
+  width: 40px;
+}
+
+button {
+  border-style: none;
+  height: 35px;
+  transition: .2s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: colors.$accent;
+    color: white;
+  }
+
+  &:active {
+    background-color: colors.$accent-dark;
+  }
+}
