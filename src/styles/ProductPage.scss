@@ -1,0 +1,80 @@
+@use './colors';
+
+.product-page-main {
+  background-color: colors.$background-gray;
+  display: flex;
+  justify-content: center;
+}
+
+.product-page-container {
+  margin: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+
+  @media screen and (min-width: 800px) {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 768px;
+  }
+
+  @media screen and (min-width: 1280px) {
+
+    max-width: 1280px;
+  }
+}
+
+.product-img {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.product-details {
+  background-color: white;
+  width: 100%;
+
+  .content-container {
+    margin: 20px;
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    p.description,
+    p:last-of-type {
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+
+      input {
+        height: 20px;
+        width: 40px;
+      }
+
+      button {
+        border-style: none;
+        width: 100px;
+        height: 35px;
+        transition: .2s;
+        cursor: pointer;
+      
+        &:hover {
+          background-color: colors.$accent;
+          color: white;
+        }
+
+        &:active {
+          background-color: colors.$accent-dark;
+        }
+      }
+    }
+  }
+}
