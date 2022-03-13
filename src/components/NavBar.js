@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-export default function NavBar() {
+export default function NavBar({ cartQuantity }) {
   return (
     <header>
       <nav>
@@ -8,7 +8,7 @@ export default function NavBar() {
         <ul id="menu">
           <li><NavLink className={({ isActive }) => isActive ? "active" : "inactive"} to="/">Home</NavLink></li>
           <li><NavLink className={({ isActive }) => isActive ? "active" : "inactive"} to="/shop">Shop</NavLink></li>
-          <li><NavLink className={({ isActive }) => isActive ? "active" : "inactive"} to="/cart">Cart (0)</NavLink></li>
+          <li><NavLink className={({ isActive }) => isActive ? "active" : "inactive"} to="/cart">Cart ({cartQuantity})</NavLink></li>
         </ul>
       </nav>
     </header>

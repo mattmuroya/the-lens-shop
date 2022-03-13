@@ -13,12 +13,26 @@
   max-width: 600px;
 }
 
-.cart-items {
+.cart-content {
   width: 100%;
   margin: 40px;
+  
+  h2 {
+    margin-bottom: 40px;
+  }
+
+  .total {
+    text-align: right;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+}
+
+.cart-items {
   display: flex;
   flex-direction: column;
-  gap: 40px
+  gap: 40px;
+  margin-bottom: 40px;
 }
 
 .cart-product {
@@ -47,6 +61,7 @@ input {
 button {
   border-style: none;
   height: 35px;
+  width: 100%;
   transition: .2s;
   cursor: pointer;
 
