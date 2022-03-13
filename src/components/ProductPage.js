@@ -1,11 +1,13 @@
 import useProducts from '../utils/useProducts'; 
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useOutletContext } from "react-router-dom";
 
 export default function ProductPage(props) {
 
   const [products] = useProducts('/data/lenses.json');
 
   const { productId } = useParams();
+
+  const { addToCart } = useOutletContext();
 
   const {
     id,
@@ -28,10 +30,15 @@ export default function ProductPage(props) {
             <p>Focal length: {focalLength}</p>
             <p>Maximum aperture: {aperture}</p>
             <p>Price: ${price} USD</p>
-            <form>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                addToCart(id, e.target.elements.quantity.value)
+              }}
+            >
               <label htmlFor="quantity">Quantity</label>
               <input type="number" id="quantity" name="quantity" min="0" defaultValue="1" />
-              <button type="submit" onClick={(e) => e.preventDefault()}>Add to Cart</button>
+              <button type="submit">Add to Cart</button>
             </form>
             <Link to="/shop">Return to Shop Page</Link>
           </div>
