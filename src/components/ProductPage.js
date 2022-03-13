@@ -1,5 +1,5 @@
 import useProducts from '../utils/useProducts'; 
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 export default function ProductPage(props) {
 
@@ -33,7 +33,7 @@ export default function ProductPage(props) {
               <input type="number" id="quantity" name="quantity" min="0" defaultValue="1" />
               <button type="submit" onClick={(e) => e.preventDefault()}>Add to Cart</button>
             </form>
-            <a href="/shop">Return to Shop Page</a>
+            <Link to="/shop">Return to Shop Page</Link>
           </div>
         </div>
       </div>

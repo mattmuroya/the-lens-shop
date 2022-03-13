@@ -44,7 +44,6 @@ function App() {
     if (cartIndex > -1) {
       // MUST MAKE DEEP COPY (NO SPREAD SYNTAX) OR ELSE UPDATING NESTED ELEMENTS WILL AFFECT CART STATE DIRECTLY
       const newCart = JSON.parse(JSON.stringify(cart));
-      // newCart[cartIndex];
       newCart[cartIndex].quantity = (Number(newCart[cartIndex].quantity) + Number(quantity)).toString();
       setCart([...newCart]);
     } else { // index not found (< 0)

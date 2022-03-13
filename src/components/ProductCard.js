@@ -1,14 +1,16 @@
+import { Link } from "react-router-dom";
+
 export default function ProductCard({ productDetails: { id, name, price }, onSubmit }) { // nested prop destructuring
 
   return (
     <article className="product-card">
-      <a href={`/shop/product/${id}`}>
+      <Link to={`/shop/product/${id}`}>
         <div className="img-container">
           <img src={`/img/${id}.jpg`} alt={name} />
         </div>
-      </a>
+      </Link>
       <div className="description">
-        <a href={`/shop/product/${id}`}><h3>{name}</h3></a>
+        <Link to={`/shop/product/${id}`}><h3>{name}</h3></Link>
         <p>${price} USD</p>
         <form
           onSubmit={(e) => {
