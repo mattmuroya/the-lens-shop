@@ -1,39 +1,65 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import NavBar from "./components/NavBar";
+import useProducts from "./utils/useProducts";
 
 function App() {
+  const [products] = useProducts('/data/lenses.json');
 
   const [cart, setCart] = useState([
     {
       "id": "0001",
+      "name": "XF16mmF1.4 R WR",
+      "aperture": "F1.4",
+      "focal length": "16mm",
       "price": "999.00",
-      "quantity": "1",
+      "quantity": "1"
     },
     {
       "id": "0002",
+      "name": "XF23mmF1.4 R",
+      "aperture": "F1.4",
+      "focal length": "23mm",
       "price": "899.00",
-      "quantity": "2",
+      "quantity": "1"
     },
     {
       "id": "0003",
+      "name": "XF35mmF1.4 R",
+      "aperture": "F1.4",
+      "focal length": "35mm",
       "price": "599.00",
-      "quantity": "3",
+      "quantity": "1"
     }
   ]);
-
 
   const cartQuantity = cart.reduce((accumulator, current) => {
     return accumulator + parseInt(current.quantity);
   }, 0)
 
-  // function addToCart() {
-  // }
+  function addToCart(productId, quantity) {
+    const product = products.find(element => element.id === productId);
+    const cartIndex = cart.findIndex(item => item.id === product.id);
+
+    if (cartIndex > -1) {
+      // MUST MAKE DEEP COPY (NO SPREAD SYNTAX) OR ELSE UPDATING NESTED ELEMENTS WILL AFFECT CART STATE DIRECTLY
+      const newCart = JSON.parse(JSON.stringify(cart));
+      // newCart[cartIndex];
+      newCart[cartIndex].quantity = (Number(newCart[cartIndex].quantity) + Number(quantity)).toString();
+      setCart([...newCart]);
+    } else { // index not found (< 0)
+      setCart([...cart, { ...product, "quantity":quantity }]);
+    }
+  }
+
+  useEffect(() => {
+    console.log(cart);
+  }, [cart]);
   
   return (
     <div className="wrapper">
       <NavBar cartQuantity={cartQuantity}/>
-      <Outlet context={[cart, setCart]} />
+      <Outlet context={{ cart, setCart, addToCart }} />
     </div>
   );
 }

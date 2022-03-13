@@ -2,7 +2,7 @@ import { useOutletContext } from "react-router-dom";
 
 export default function Cart() {
 
-  const [cart, setCart] = useOutletContext();
+  const { cart, setCart } = useOutletContext();
 
   const cartTotal = cart.reduce((accumulator, current) => {
     return accumulator + (parseFloat(current.price) * parseFloat(current.quantity));
