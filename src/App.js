@@ -38,10 +38,13 @@ function App() {
   }, 0)
 
   function addToCart(productId, quantity) {
+
     const product = products.find(element => element.id === productId);
     const cartIndex = cart.findIndex(item => item.id === product.id);
 
-    if (cartIndex > -1) {
+    if (parseInt(cart[cartIndex].quantity) + parseInt(quantity) > 99) {
+      alert(`Sorry! Maximum quantity of 99 per product. You already have ${cart[cartIndex].quantity} of those in your cart.`);
+    } else if (cartIndex > -1) {
       // deep copy (not shallow) to avoid state mutation:
       const newCart = JSON.parse(JSON.stringify(cart));
       newCart[cartIndex].quantity = (Number(newCart[cartIndex].quantity) + Number(quantity)).toString();

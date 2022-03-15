@@ -12,7 +12,7 @@ export default function CartItem({ productDetails: { id, name, price, quantity }
           onSubmit(id, e.target.elements.quantity.value);
         }}>
           <label htmlFor="quantity">Quantity</label>
-          <input id="quantity" type="number" defaultValue={quantity} min="0" />
+          <input id="quantity" type="number" defaultValue={quantity} min="0" max="99" />
           <button className="update" type="submit">Update</button>
         </form>
         <div className="cart-product-price">${(parseFloat(price) * parseFloat(quantity)).toFixed(2)} USD</div>

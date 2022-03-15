@@ -19,7 +19,7 @@ export default function ProductCard({ productDetails: { id, name, price }, onSub
           }}
         >
           <label htmlFor="quantity">Quantity</label>
-          <input type="number" id="quantity" name="quantity" min="0" defaultValue="1" />
+          <input type="number" id="quantity" name="quantity" min="0" max="99" defaultValue="1" />
           <button type="submit">Add to Cart</button>
         </form>
       </div>
