@@ -15,7 +15,7 @@ import Cart from './components/Cart';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter basename='/the-lens-shop'>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route element={<App />}>
           <Route path="/" element={<Home />} />
@@ -26,7 +26,7 @@ ReactDOM.render(
             <main className="error">
               <div className="error-wrapper">
                 <p>There's nothing here!</p>
-                <p><Link href="/">Go Home</Link></p>
+                <p><Link to="/">Go Home</Link></p>
               </div>
             </main>
           } />
