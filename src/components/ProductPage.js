@@ -1,14 +1,14 @@
-import useProducts from '../utils/useProducts'; 
+// import useProducts from '../utils/useProducts'; 
 import { useParams, Link, useOutletContext } from "react-router-dom";
 
-export default function ProductPage(props) {
+export default function ProductPage() {
 
-  const [products] = useProducts('https://mattmuroya.github.io/the-lens-shop/data/lenses.json');
+  // const [products] = useProducts(require('../data/lenses.json'));
 
   const { productId } = useParams();
 
-  const { addToCart } = useOutletContext();
-
+  const { products, addToCart } = useOutletContext();
+  
   const {
     id,
     name,
@@ -18,6 +18,7 @@ export default function ProductPage(props) {
   } = products.find(product => {
     return product.id === productId;
   }) || {}; // fallback empty object for when value is undefined prior to fetch
+
 
   return (
     <main className="product-page-main">

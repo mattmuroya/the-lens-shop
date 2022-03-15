@@ -4,7 +4,7 @@ import NavBar from "./components/NavBar";
 import useProducts from "./utils/useProducts";
 
 function App() {
-  const [products] = useProducts('https://mattmuroya.github.io/the-lens-shop/data/lenses.json');
+  const [products] = useProducts(require('./data/lenses.json'));
 
   const [cart, setCart] = useState([
     {
@@ -73,7 +73,7 @@ function App() {
   return (
     <div className="wrapper">
       <NavBar cartQuantity={cartQuantity}/>
-      <Outlet context={{ cart, setCart, addToCart, updateCartQuantity }} />
+      <Outlet context={{ products, cart, setCart, addToCart, updateCartQuantity }} />
     </div>
   );
 }

@@ -1,13 +1,13 @@
-import useProducts from '../utils/useProducts';
+// import useProducts from '../utils/useProducts';
 import FadeIn from 'react-fade-in/lib/FadeIn';
 import ProductCard from './ProductCard';
 import { useOutletContext } from 'react-router-dom';
 
 export default function Shop() {
 
-  const [products] = useProducts('https://mattmuroya.github.io/the-lens-shop/data/lenses.json');
+  // const [products] = useProducts('https://mattmuroya.github.io/the-lens-shop/data/lenses.json');
 
-  const { addToCart } = useOutletContext();
+  const { products, addToCart } = useOutletContext();
 
   return (
     <main className="shop-main">
