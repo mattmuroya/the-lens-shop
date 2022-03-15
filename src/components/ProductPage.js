@@ -1,9 +1,7 @@
-// import useProducts from '../utils/useProducts'; 
 import { useParams, Link, useOutletContext } from "react-router-dom";
+import NothingHerePage from "./NothingHerePage";
 
 export default function ProductPage() {
-
-  // const [products] = useProducts(require('../data/lenses.json'));
 
   const { productId } = useParams();
 
@@ -19,6 +17,9 @@ export default function ProductPage() {
     return product.id === productId;
   }) || {}; // fallback empty object for when value is undefined prior to fetch
 
+  if (!id) {
+    return <NothingHerePage />
+  }
 
   return (
     <main className="product-page-main">
