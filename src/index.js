@@ -5,6 +5,7 @@ import {
   BrowserRouter,
   Routes,
   Route,
+  Link
 } from 'react-router-dom';
 import App from './App';
 import Home from './components/Home';
@@ -25,7 +26,7 @@ ReactDOM.render(
             <main className="error">
               <div className="error-wrapper">
                 <p>There's nothing here!</p>
-                <p><a href="/">Go Home</a></p>
+                <p><Link href="/">Go Home</Link></p>
               </div>
             </main>
           } />

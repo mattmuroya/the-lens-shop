@@ -4,7 +4,7 @@ import NavBar from "./components/NavBar";
 import useProducts from "./utils/useProducts";
 
 function App() {
-  const [products] = useProducts(require('./data/lenses.json'));
+  const [products] = useProducts(process.env.PUBLIC_URL + '/data/lenses.json');
 
   const [cart, setCart] = useState([
     {
