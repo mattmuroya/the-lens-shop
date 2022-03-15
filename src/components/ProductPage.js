@@ -22,7 +22,7 @@ export default function ProductPage(props) {
   return (
     <main className="product-page-main">
       <div className="product-page-container">
-        <img className="product-img" src={`/img/${id}.jpg`} alt={name} />
+        <img className="product-img" src={require(`../img/${id}.jpg`)} alt={name} />
         <div className="product-details">
           <div className="content-container">
             <h2>{name}</h2>

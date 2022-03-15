@@ -6,7 +6,7 @@ export default function ProductCard({ productDetails: { id, name, price }, onSub
     <article className="product-card">
       <Link to={`/shop/product/${id}`}>
         <div className="img-container">
-          <img src={`/img/${id}.jpg`} alt={name} />
+          <img src={require(`../img/${id}.jpg`)} alt={name} />
         </div>
       </Link>
       <div className="description">

@@ -1,7 +1,7 @@
 @use './colors';
 
 .home-main {
-  background-image: url('~/public/img/hero.jpg');
+  background-image: url('../img/hero.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   height: calc(100vh - 60px);
