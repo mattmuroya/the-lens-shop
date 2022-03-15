@@ -2,8 +2,11 @@ export default function CartItem({ productDetails: { id, name, price, quantity }
 
   return (
     <div className="cart-product">
-      <div className="cart-product-name">{name}</div>
       <div className="cart-product-details">
+        <img className="cart-product-img" src={`/img/${id}.jpg`} alt={name}/>
+        <div className="cart-product-name">{name}</div>
+      </div>
+      <div className="cart-product-quantity">
         <form onSubmit={(e) => {
           e.preventDefault();
           onSubmit(id, e.target.elements.quantity.value);
