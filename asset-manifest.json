@@ -1,14 +1,23 @@
 {
   "files": {
     "main.css": "/the-lens-shop/static/css/main.3ae1f12e.css",
-    "main.js": "/the-lens-shop/static/js/main.8e59afce.js",
+    "main.js": "/the-lens-shop/static/js/main.0a9d4fa4.js",
     "static/media/hero.jpg": "/the-lens-shop/static/media/hero.f1390a8694f244c7ffe0.jpg",
+    "static/media/hero-original.jpg": "/the-lens-shop/static/media/hero-original.c312c61c825c699858c1.jpg",
+    "static/media/0008.jpg": "/the-lens-shop/static/media/0008.aa4c27fd450d36226608.jpg",
+    "static/media/0007.jpg": "/the-lens-shop/static/media/0007.14981651a878b9866316.jpg",
+    "static/media/0005.jpg": "/the-lens-shop/static/media/0005.63018af799ff220f0011.jpg",
+    "static/media/0001.jpg": "/the-lens-shop/static/media/0001.bf90e7c63196d80a4141.jpg",
+    "static/media/0003.jpg": "/the-lens-shop/static/media/0003.427d1e880b5b68a44198.jpg",
+    "static/media/0006.jpg": "/the-lens-shop/static/media/0006.62331f6ef52e7602cf0e.jpg",
+    "static/media/0002.jpg": "/the-lens-shop/static/media/0002.13ea35b2b8eca1dc1b7b.jpg",
+    "static/media/0004.jpg": "/the-lens-shop/static/media/0004.67ced5e7854e97d1fdc7.jpg",
     "index.html": "/the-lens-shop/index.html",
     "main.3ae1f12e.css.map": "/the-lens-shop/static/css/main.3ae1f12e.css.map",
-    "main.8e59afce.js.map": "/the-lens-shop/static/js/main.8e59afce.js.map"
+    "main.0a9d4fa4.js.map": "/the-lens-shop/static/js/main.0a9d4fa4.js.map"
   },
   "entrypoints": [
     "static/css/main.3ae1f12e.css",
-    "static/js/main.8e59afce.js"
+    "static/js/main.0a9d4fa4.js"
   ]
 }
