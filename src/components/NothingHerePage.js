@@ -8,5 +8,5 @@ export default function NothingHerePage() {
         <p><Link to="/">Go Home</Link></p>
       </div>
     </main>
-  )
-}
+  );
+};

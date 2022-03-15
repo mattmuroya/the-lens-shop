@@ -5,8 +5,6 @@ import { useOutletContext } from 'react-router-dom';
 
 export default function Shop() {
 
-  // const [products] = useProducts('https://mattmuroya.github.io/the-lens-shop/data/lenses.json');
-
   const { products, addToCart } = useOutletContext();
 
   return (
