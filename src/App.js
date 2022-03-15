@@ -42,13 +42,25 @@ function App() {
     const product = products.find(element => element.id === productId);
     const cartIndex = cart.findIndex(item => item.id === product.id);
 
-    if (parseInt(cart[cartIndex].quantity) + parseInt(quantity) > 99) {
-      alert(`Sorry! Maximum quantity of 99 per product. You already have ${cart[cartIndex].quantity} of those in your cart.`);
-    } else if (cartIndex > -1) {
-      // deep copy (not shallow) to avoid state mutation:
-      const newCart = JSON.parse(JSON.stringify(cart));
-      newCart[cartIndex].quantity = (Number(newCart[cartIndex].quantity) + Number(quantity)).toString();
-      setCart(newCart);
+    // if (parseInt(cart[cartIndex].quantity) + parseInt(quantity) > 99) {
+    //   // alert(`Sorry! Maximum quantity of 99 per product. You already have ${cart[cartIndex].quantity} of those in your cart.`);
+    //   console.log('oop');
+    // }
+
+    // if ( (parseInt(cart[cartIndex].quantity) || 0) + quantity > 99) {
+    //   alert(`Sorry! Maximum quantity of 99 per product. You already have ${cart[cartIndex].quantity} of those in your cart.`);
+    // }
+    
+    if (cartIndex > -1) {
+
+      if (parseInt(cart[cartIndex].quantity) + parseInt(quantity) > 99)  {
+        alert(`Sorry! Maximum quantity of 99 per product. You already have ${cart[cartIndex].quantity} of those in your cart.`);
+      } else {
+        // deep copy (not shallow) to avoid state mutation:
+        const newCart = JSON.parse(JSON.stringify(cart));
+        newCart[cartIndex].quantity = (Number(newCart[cartIndex].quantity) + Number(quantity)).toString();
+        setCart(newCart);
+      }
     } else { // index not found (< 0)
       setCart([...cart, { ...product, "quantity":quantity }]);
     }
