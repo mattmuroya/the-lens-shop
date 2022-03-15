@@ -24,5 +24,5 @@ export default function ProductCard({ productDetails: { id, name, price }, onSub
         </form>
       </div>
     </article>
-  )
-}
+  );
+};

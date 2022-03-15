@@ -42,7 +42,25 @@
   gap: 10px;
 
   .cart-product-name {
+    display: flex;
+    align-items: center;
     font-weight: 700;
+  }
+
+  .cart-product-details {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    form {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .cart-product-price {
+      margin-left: auto;
+    }
   }
 
   &:last-of-type {
@@ -61,9 +79,13 @@ input {
 button {
   border-style: none;
   height: 35px;
-  width: 100%;
+  width: 60px;
   transition: .2s;
   cursor: pointer;
+
+  &.checkout-btn {
+    width: 100%;
+  }
 
   &:hover {
     background-color: colors.$accent;

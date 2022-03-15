@@ -45,10 +45,20 @@ function App() {
       // deep copy (not shallow) to avoid state mutation:
       const newCart = JSON.parse(JSON.stringify(cart));
       newCart[cartIndex].quantity = (Number(newCart[cartIndex].quantity) + Number(quantity)).toString();
-      setCart([...newCart]);
+      setCart(newCart);
     } else { // index not found (< 0)
       setCart([...cart, { ...product, "quantity":quantity }]);
     }
+  }
+
+  function updateCartQuantity(productId, quantity) {
+    const product = products.find(element => element.id === productId);
+    const cartIndex = cart.findIndex(item => item.id === product.id);
+    
+    const newCart = JSON.parse(JSON.stringify(cart));
+    newCart[cartIndex].quantity = quantity;
+    console.log(newCart[cartIndex]);
+    setCart(newCart);
   }
 
   useEffect(() => {
@@ -58,7 +68,7 @@ function App() {
   return (
     <div className="wrapper">
       <NavBar cartQuantity={cartQuantity}/>
-      <Outlet context={{ cart, setCart, addToCart }} />
+      <Outlet context={{ cart, setCart, addToCart, updateCartQuantity }} />
     </div>
   );
 }
