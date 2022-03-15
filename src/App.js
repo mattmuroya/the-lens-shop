@@ -4,7 +4,7 @@ import NavBar from "./components/NavBar";
 import useProducts from "./utils/useProducts";
 
 function App() {
-  const [products] = useProducts('/data/lenses.json');
+  const [products] = useProducts('https://mattmuroya.github.io/the-lens-shop/data/lenses.json');
 
   const [cart, setCart] = useState([
     {

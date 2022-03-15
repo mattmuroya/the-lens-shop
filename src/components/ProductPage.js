@@ -3,7 +3,7 @@ import { useParams, Link, useOutletContext } from "react-router-dom";
 
 export default function ProductPage(props) {
 
-  const [products] = useProducts('/data/lenses.json');
+  const [products] = useProducts('https://mattmuroya.github.io/the-lens-shop/data/lenses.json');
 
   const { productId } = useParams();
 
