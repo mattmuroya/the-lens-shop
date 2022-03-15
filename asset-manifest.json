@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/github.io/the-lens-shop/static/css/main.f2588798.css",
-    "main.js": "/github.io/the-lens-shop/static/js/main.a50f28b8.js",
-    "static/media/hero.jpg": "/github.io/the-lens-shop/static/media/hero.f1390a8694f244c7ffe0.jpg",
-    "index.html": "/github.io/the-lens-shop/index.html",
-    "main.f2588798.css.map": "/github.io/the-lens-shop/static/css/main.f2588798.css.map",
-    "main.a50f28b8.js.map": "/github.io/the-lens-shop/static/js/main.a50f28b8.js.map"
+    "main.css": "/the-lens-shop/static/css/main.3ae1f12e.css",
+    "main.js": "/the-lens-shop/static/js/main.a50f28b8.js",
+    "static/media/hero.jpg": "/the-lens-shop/static/media/hero.f1390a8694f244c7ffe0.jpg",
+    "index.html": "/the-lens-shop/index.html",
+    "main.3ae1f12e.css.map": "/the-lens-shop/static/css/main.3ae1f12e.css.map",
+    "main.a50f28b8.js.map": "/the-lens-shop/static/js/main.a50f28b8.js.map"
   },
   "entrypoints": [
-    "static/css/main.f2588798.css",
+    "static/css/main.3ae1f12e.css",
     "static/js/main.a50f28b8.js"
   ]
 }
