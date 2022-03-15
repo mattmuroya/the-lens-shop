@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import useProducts from "./utils/useProducts";
@@ -41,18 +41,8 @@ function App() {
 
     const product = products.find(element => element.id === productId);
     const cartIndex = cart.findIndex(item => item.id === product.id);
-
-    // if (parseInt(cart[cartIndex].quantity) + parseInt(quantity) > 99) {
-    //   // alert(`Sorry! Maximum quantity of 99 per product. You already have ${cart[cartIndex].quantity} of those in your cart.`);
-    //   console.log('oop');
-    // }
-
-    // if ( (parseInt(cart[cartIndex].quantity) || 0) + quantity > 99) {
-    //   alert(`Sorry! Maximum quantity of 99 per product. You already have ${cart[cartIndex].quantity} of those in your cart.`);
-    // }
     
     if (cartIndex > -1) {
-
       if (parseInt(cart[cartIndex].quantity) + parseInt(quantity) > 99)  {
         alert(`Sorry! Maximum quantity of 99 per product. You already have ${cart[cartIndex].quantity} of those in your cart.`);
       } else {
@@ -69,16 +59,16 @@ function App() {
   function updateCartQuantity(productId, quantity) {
     const product = products.find(element => element.id === productId);
     const cartIndex = cart.findIndex(item => item.id === product.id);
-    
     const newCart = JSON.parse(JSON.stringify(cart));
-    newCart[cartIndex].quantity = quantity;
-    console.log(newCart[cartIndex]);
+
+    if (quantity === '0') {
+      newCart.splice(cartIndex, 1);
+    } else {
+      newCart[cartIndex].quantity = quantity;
+    }
+    console.log(newCart);
     setCart(newCart);
   }
-
-  useEffect(() => {
-    console.log(cart);
-  }, [cart]);
   
   return (
     <div className="wrapper">

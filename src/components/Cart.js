@@ -16,7 +16,7 @@ export default function Cart() {
           <h2>Cart</h2>
           <div className="cart-items">
             {cart.map(product => (
-              <CartItem productDetails={product} onSubmit={updateCartQuantity} />
+              <CartItem key={product.id} productDetails={product} onSubmit={updateCartQuantity} />
             ))}
           </div>
           <div className="total">Total: ${parseFloat(cartTotal).toFixed(2)}</div>
