@@ -42,7 +42,7 @@ function App() {
     const cartIndex = cart.findIndex(item => item.id === product.id);
 
     if (cartIndex > -1) {
-      // MUST MAKE DEEP COPY (NO SPREAD SYNTAX) OR ELSE UPDATING NESTED ELEMENTS WILL AFFECT CART STATE DIRECTLY
+      // deep copy (not shallow) to avoid state mutation:
       const newCart = JSON.parse(JSON.stringify(cart));
       newCart[cartIndex].quantity = (Number(newCart[cartIndex].quantity) + Number(quantity)).toString();
       setCart([...newCart]);
