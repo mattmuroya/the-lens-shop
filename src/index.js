@@ -7,7 +7,6 @@ import {
   Route,
 } from 'react-router-dom';
 import App from './App';
-import NavBar from './components/NavBar';
 import Home from './components/Home';
 import Shop from './components/Shop';
 import ProductPage from './components/ProductPage';
@@ -15,7 +14,7 @@ import Cart from './components/Cart';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename='/the-lens-shop'>
       <Routes>
         <Route element={<App />}>
           <Route path="/" element={<Home />} />
