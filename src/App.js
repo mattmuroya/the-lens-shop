@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import useProducts from "./utils/useProducts";
+import toast, { Toaster } from "react-hot-toast";
 
 function App() {
   const [products] = useProducts(process.env.PUBLIC_URL + '/data/lenses.json');
@@ -29,9 +30,13 @@ function App() {
         const newCart = JSON.parse(JSON.stringify(cart));
         newCart[cartIndex].quantity = (Number(newCart[cartIndex].quantity) + Number(quantity)).toString();
         setCart(newCart);
+        toast.dismiss();
+        toast('Added to cart!')
       }
     } else { // index not found (< 0)
       setCart([...cart, { ...product, "quantity":quantity }]);
+      toast.dismiss();
+      toast('Added to cart!')
     }
   }
 
@@ -46,10 +51,25 @@ function App() {
       newCart[cartIndex].quantity = quantity;
     }
     setCart(newCart);
+    toast.dismiss();
+    toast('Cart quantity updated!')
   }
   
   return (
     <div className="wrapper">
+      <Toaster
+      position="top-right"
+        containerStyle={{
+            marginTop: "60px",
+        }}
+        toastOptions={{
+          duration: 2000,
+          style: {
+            padding: "1.2rem",
+            borderRadius: "0",
+          }
+        }}
+      />
       <NavBar cartQuantity={cartQuantity}/>
       <Outlet context={{ products, cart, setCart, addToCart, updateCartQuantity }} />
     </div>
