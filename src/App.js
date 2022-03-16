@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import useProducts from "./utils/useProducts";
@@ -6,32 +6,12 @@ import useProducts from "./utils/useProducts";
 function App() {
   const [products] = useProducts(process.env.PUBLIC_URL + '/data/lenses.json');
 
-  const [cart, setCart] = useState([
-    {
-      "id": "0001",
-      "name": "XF16mmF1.4 R WR",
-      "aperture": "F1.4",
-      "focal length": "16mm",
-      "price": "999.00",
-      "quantity": "1"
-    },
-    {
-      "id": "0002",
-      "name": "XF23mmF1.4 R",
-      "aperture": "F1.4",
-      "focal length": "23mm",
-      "price": "899.00",
-      "quantity": "1"
-    },
-    {
-      "id": "0003",
-      "name": "XF35mmF1.4 R",
-      "aperture": "F1.4",
-      "focal length": "35mm",
-      "price": "599.00",
-      "quantity": "1"
-    }
-  ]);
+  const [cart, setCart] = useState(JSON.parse(localStorage.getItem('cart')) || []);
+
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+    console.log(localStorage.getItem('cart'));
+  }, [cart]); // each time cart is changed
 
   const cartQuantity = cart.reduce((accumulator, current) => {
     return accumulator + parseInt(current.quantity);
