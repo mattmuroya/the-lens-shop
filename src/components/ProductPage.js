@@ -39,7 +39,7 @@ export default function ProductPage() {
               }}
             >
               <label htmlFor="quantity">Quantity</label>
-              <input type="number" id="quantity" name="quantity" min="0" defaultValue="1" />
+              <input type="number" id="quantity" name="quantity" min="0" max="99" defaultValue="1" />
               <button type="submit">Add to Cart</button>
             </form>
             <Link to="/shop">Return to Shop Page</Link>

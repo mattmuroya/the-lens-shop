@@ -10,7 +10,6 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cart));
-    console.log(localStorage.getItem('cart'));
   }, [cart]); // each time cart is changed
 
   const cartQuantity = cart.reduce((accumulator, current) => {
@@ -23,7 +22,7 @@ function App() {
     const cartIndex = cart.findIndex(item => item.id === product.id);
     
     if (cartIndex > -1) {
-      if (parseInt(cart[cartIndex].quantity) + parseInt(quantity) > 99)  {
+      if ((parseInt(cart[cartIndex].quantity) || 0) + parseInt(quantity) > 99)  {
         alert(`Sorry! Maximum quantity of 99 per product. You already have ${cart[cartIndex].quantity} of those in your cart.`);
       } else {
         // deep copy (not shallow) to avoid state mutation:
@@ -46,7 +45,6 @@ function App() {
     } else {
       newCart[cartIndex].quantity = quantity;
     }
-    console.log(newCart);
     setCart(newCart);
   }
   
