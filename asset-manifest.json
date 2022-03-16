@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/the-lens-shop/static/css/main.3ae1f12e.css",
-    "main.js": "/the-lens-shop/static/js/main.1e5a30e6.js",
+    "main.js": "/the-lens-shop/static/js/main.214241c7.js",
     "static/media/hero.jpg": "/the-lens-shop/static/media/hero.f1390a8694f244c7ffe0.jpg",
     "static/media/hero-original.jpg": "/the-lens-shop/static/media/hero-original.c312c61c825c699858c1.jpg",
-    "static/media/0008.jpg": "/the-lens-shop/static/media/0008.aa4c27fd450d36226608.jpg",
-    "static/media/0007.jpg": "/the-lens-shop/static/media/0007.14981651a878b9866316.jpg",
-    "static/media/0005.jpg": "/the-lens-shop/static/media/0005.63018af799ff220f0011.jpg",
-    "static/media/0001.jpg": "/the-lens-shop/static/media/0001.bf90e7c63196d80a4141.jpg",
-    "static/media/0003.jpg": "/the-lens-shop/static/media/0003.427d1e880b5b68a44198.jpg",
-    "static/media/0006.jpg": "/the-lens-shop/static/media/0006.62331f6ef52e7602cf0e.jpg",
-    "static/media/0002.jpg": "/the-lens-shop/static/media/0002.13ea35b2b8eca1dc1b7b.jpg",
-    "static/media/0004.jpg": "/the-lens-shop/static/media/0004.67ced5e7854e97d1fdc7.jpg",
+    "static/media/0008.jpg": "/the-lens-shop/static/media/0008.f3566a9d7d4619610e78.jpg",
+    "static/media/0007.jpg": "/the-lens-shop/static/media/0007.5c6171d392baf893dbb5.jpg",
+    "static/media/0005.jpg": "/the-lens-shop/static/media/0005.0013c9162b7485d82ad2.jpg",
+    "static/media/0001.jpg": "/the-lens-shop/static/media/0001.8036c543247914ba6536.jpg",
+    "static/media/0003.jpg": "/the-lens-shop/static/media/0003.f14c8de60e7190e5ad81.jpg",
+    "static/media/0006.jpg": "/the-lens-shop/static/media/0006.f24f0683d09f0fa5598b.jpg",
+    "static/media/0002.jpg": "/the-lens-shop/static/media/0002.7ee74e199cc2a3f15091.jpg",
+    "static/media/0004.jpg": "/the-lens-shop/static/media/0004.0f91f60803ec172d2c82.jpg",
     "index.html": "/the-lens-shop/index.html",
     "main.3ae1f12e.css.map": "/the-lens-shop/static/css/main.3ae1f12e.css.map",
-    "main.1e5a30e6.js.map": "/the-lens-shop/static/js/main.1e5a30e6.js.map"
+    "main.214241c7.js.map": "/the-lens-shop/static/js/main.214241c7.js.map"
   },
   "entrypoints": [
     "static/css/main.3ae1f12e.css",
-    "static/js/main.1e5a30e6.js"
+    "static/js/main.214241c7.js"
   ]
 }
