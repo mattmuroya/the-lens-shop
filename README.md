@@ -5,6 +5,7 @@ The Lens Shop is a storefront website built in React, featuring:
 - Single-page rendering between URL paths using React Router.
 - Ability to add items to your cart and update quantities.
 - React hooks for manging cart state.
+- Outlet context for passing props from parent to child components.
 - Local storage for persisting cart items on reload.
 - Custom hook for fetching JSON product data (plus the ability to integrate with an external API).
 - Responsive design styled with SCSS.
